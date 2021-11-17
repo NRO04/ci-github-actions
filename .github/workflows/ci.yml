@@ -7,12 +7,13 @@ on:
 jobs:
   ro-test-action:
     name: test ro action
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: PULL REPOSITORY
 
       - uses: NRO04/docker-build-push-action@vtest
+      - name: USING RO ACTION vtest
         with:
           name-repository: ${{ github.repository }}
           tag: v1
