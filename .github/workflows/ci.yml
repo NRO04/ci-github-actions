@@ -1,0 +1,21 @@
+name: CI_RO
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  ro-test-action:
+    name: test ro action
+    runs_on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: PULL REPOSITORY
+
+      - uses: NRO04/docker-build-push-action@vtest
+      - name: USING RO ACTION 
+      with:
+        name-repository: ${{ github.repository }}
+        tag: v1
+        docker-username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        docker-password: ${{ secrets.DOCKER_HUB_PASSWORD }}
