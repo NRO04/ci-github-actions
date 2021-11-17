@@ -9,10 +9,11 @@ jobs:
     name: test ro action
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: PULL REPOSITORY
+        uses: actions/checkout@v2
 
-      - uses: NRO04/docker-build-push-action@vtest
+      - name: USING RO ACTION vtest
+        uses: NRO04/docker-build-push-action@vtest
         with:
           name-repository: ${{ github.repository }}
           tag: v1
