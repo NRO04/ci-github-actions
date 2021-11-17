@@ -13,7 +13,6 @@ jobs:
       - name: PULL REPOSITORY
 
       - uses: NRO04/docker-build-push-action@vtest
-      - name: USING RO ACTION Vtest
         with:
           name-repository: ${{ github.repository }}
           tag: v1
